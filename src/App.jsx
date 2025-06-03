@@ -22,6 +22,7 @@ const App = () => {
         <Route path='/contact' element={<Contact  />} />
         <Route path='/product' element={<Product />} />
         <Route path='/auth' element={<Auth />} />
+        
       </Routes>
       <Footer></Footer>
     </>
