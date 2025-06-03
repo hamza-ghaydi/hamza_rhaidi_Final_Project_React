@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaFacebookF, FaGooglePlusG, FaInstagram, FaPinterestSquare, FaTwitter } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import images from '../constants/images';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/Cartcontext';
 
 const Nav = () => {
     const navigate = useNavigate()
+    const { cartItemsCount } = useCart()
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -33,7 +35,14 @@ const Nav = () => {
                 <div className='flex items-center gap-5'>
                     <a href="mailto:hamzaghayd01@gmail.com">hamzaghayd01@gmail.com</a>
                     <CgProfile onClick={() => { navigate("/auth") }} size={25} className='text-black/35 cursor-pointer' />
-                    <MdOutlineShoppingCart size={25} className='text-black/35' />
+                    <div className="relative cursor-pointer" onClick={() => navigate("/cart")}>
+                        <MdOutlineShoppingCart size={25} className='text-black/35' />
+                        {cartItemsCount > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                                {cartItemsCount}
+                            </span>
+                        )}
+                    </div>
                 </div>
             </div>
 
@@ -62,8 +71,15 @@ const Nav = () => {
                     </div>
 
                     <div className='flex items-center gap-3'>
-                        <CgProfile size={20} className='text-black/35' />
-                        <MdOutlineShoppingCart size={20} className='text-black/35' />
+                        <CgProfile onClick={() => { navigate("/auth") }} size={20} className='text-black/35 cursor-pointer' />
+                        <div className="relative cursor-pointer" onClick={() => navigate("/cart")}>
+                            <MdOutlineShoppingCart size={20} className='text-black/35' />
+                            {cartItemsCount > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center text-[10px]">
+                                    {cartItemsCount}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Herosection from './partials/Herosection';
 import Categories from './partials/Categories';
 import OurProducts from './partials/OurProducts';
