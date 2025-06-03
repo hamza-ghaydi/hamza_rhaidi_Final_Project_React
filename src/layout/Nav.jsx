@@ -4,8 +4,10 @@ import { HiMenu, HiX } from 'react-icons/hi';
 import images from '../constants/images';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineShoppingCart } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+    const navigate = useNavigate()
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -30,7 +32,7 @@ const Nav = () => {
 
                 <div className='flex items-center gap-5'>
                     <a href="mailto:hamzaghayd01@gmail.com">hamzaghayd01@gmail.com</a>
-                    <CgProfile size={25} className='text-black/35' />
+                    <CgProfile onClick={()=>{navigate("/auth")}} size={25} className='text-black/35 cursor-pointer' />
                     <MdOutlineShoppingCart size={25} className='text-black/35' />
                 </div>
             </div>
@@ -38,11 +40,11 @@ const Nav = () => {
             
             <div className='w-full items-center justify-center py-5 hidden md:flex'>
                 <ul className='flex items-center gap-10 text-black/50 cursor-pointer'>
-                    <li className='focus:text-red-500 hover:text-red-500'>Home</li>
-                    <li className='focus:text-red-500 hover:text-red-500'>Shop</li>
-                    <li className='focus:text-red-500 hover:text-red-500'>Blog</li>
-                    <li className='focus:text-red-500 hover:text-red-500'>About</li>
-                    <li className='focus:text-red-500 hover:text-red-500'>Contact</li>
+                    <li onClick={()=>{navigate("/")}} className='focus:text-red-500 hover:text-red-500'>Home</li>
+                    <li onClick={()=>{navigate("/shop")}} className='focus:text-red-500 hover:text-red-500'>Shop</li>
+                    <li onClick={()=>{navigate("/blog")}} className='focus:text-red-500 hover:text-red-500'>Blog</li>
+                    <li onClick={()=>{navigate("/about")}} className='focus:text-red-500 hover:text-red-500'>About</li>
+                    <li onClick={()=>{navigate("/contact")}} className='focus:text-red-500 hover:text-red-500'>Contact</li>
                 </ul>
             </div>
 
