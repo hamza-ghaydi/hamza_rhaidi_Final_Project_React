@@ -50,7 +50,7 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[50vh] overflow-hidden">
+    <div className="relative w-full h-[80vh] overflow-hidden">
 
       <div 
         className="flex transition-transform duration-500 ease-in-out h-full"
