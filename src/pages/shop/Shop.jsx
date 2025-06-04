@@ -26,8 +26,11 @@ const Shop = () => {
                 filtered = filtered.filter(product =>
                     product.categories.some(cat => cat.toLowerCase().includes('women'))
                 );
+            }else if (selectedCategory === 'Best Seller') {
+                filtered = filtered.filter(product =>
+                    product.categories.some(cat => cat.toLowerCase().includes('Best Seller'))
+                );
             }
-            
         }
 
         
@@ -95,7 +98,7 @@ const Shop = () => {
                         <div className="mb-8">
                             <h3 className="text-lg font-semibold text-gray-800 mb-4">Categories</h3>
                             <div className="space-y-2">
-                                {['Best Seller', 'Featured', 'Men', 'Women'].map((category) => (
+                                {['Best Seller', 'Men', 'Women'].map((category) => (
                                     <label key={category} className="flex items-center cursor-pointer">
                                         <input
                                             type="radio"

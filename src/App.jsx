@@ -1,6 +1,6 @@
 
 import Nav from './layout/Nav';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Shop from './pages/shop/Shop';
 import Blog from './pages/blog/Blog';
@@ -10,11 +10,16 @@ import Product from './pages/product/Product';
 import Cart from './pages/cart/Cart';
 import Auth from './pages/auth/Auth';
 import Footer from './layout/Footer';
+import { MdKeyboardDoubleArrowUp } from 'react-icons/md';
 
 const App = () => {
+  const navigate = useNavigate()
   return (
     <>
       <Nav></Nav>
+      <div className='fixed right-5 bottom-5 bg-black/30 text-amber-50 p-2 rounded cursor-pointer' onClick={()=> window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <MdKeyboardDoubleArrowUp size={20}  />
+      </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />
