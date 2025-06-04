@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <Nav></Nav>
-      <div className='fixed right-5 bottom-5 bg-black/30 text-amber-50 p-2 rounded cursor-pointer' onClick={()=> window.scrollTo({ top: 0, behavior: 'smooth' })}>
+      <div className=' z-50 fixed right-5 bottom-5 bg-black/30 text-amber-50 p-2 rounded cursor-pointer' onClick={()=> window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <MdKeyboardDoubleArrowUp size={20}  />
       </div>
       <Routes>
