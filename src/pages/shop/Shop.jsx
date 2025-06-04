@@ -20,15 +20,15 @@ const Shop = () => {
         if (selectedCategory) {
             if (selectedCategory === 'Men') {
                 filtered = filtered.filter(product =>
-                    product.categories.some(cat => cat.toLowerCase().includes('men'))
+                    product.categories?.some(cat => cat.toLowerCase().includes('men'))
                 );
             } else if (selectedCategory === 'Women') {
                 filtered = filtered.filter(product =>
-                    product.categories.some(cat => cat.toLowerCase().includes('women'))
+                    product.categories?.some(cat => cat.toLowerCase().includes('women'))
                 );
             }else if (selectedCategory === 'Best Seller') {
                 filtered = filtered.filter(product =>
-                    product.categories.some(cat => cat.toLowerCase().includes('Best Seller'))
+                    product.categories?.some(cat => cat.toLowerCase().includes('best'))
                 );
             }
         }

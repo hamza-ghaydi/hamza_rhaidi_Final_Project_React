@@ -13,7 +13,7 @@ import Footer from './layout/Footer';
 import { MdKeyboardDoubleArrowUp } from 'react-icons/md';
 
 const App = () => {
-  const navigate = useNavigate()
+  
   return (
     <>
       <Nav></Nav>
